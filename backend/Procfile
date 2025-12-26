@@ -1,0 +1,1 @@
+web: gunicorn tacnique_backend.wsgi

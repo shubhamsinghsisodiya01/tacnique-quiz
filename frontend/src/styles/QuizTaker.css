@@ -1,0 +1,171 @@
+.quiz-taker {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quiz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.quiz-header h2 {
+  flex: 1;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.progress-info {
+  background: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #666;
+  white-space: nowrap;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 3px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transition: width 0.3s ease;
+}
+
+.question-container {
+  margin-bottom: 2rem;
+}
+
+.question-text {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.choices-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.choice-label {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.choice-label:hover {
+  border-color: #667eea;
+  background: #f8f9ff;
+}
+
+.choice-label input[type='radio'] {
+  margin-right: 1rem;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  accent-color: #667eea;
+}
+
+.choice-label input[type='radio']:checked + .choice-text {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.choice-text {
+  flex: 1;
+  color: #333;
+  font-size: 1rem;
+}
+
+.text-input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.navigation-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.answer-status {
+  background: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .quiz-taker {
+    padding: 1.5rem;
+  }
+
+  .quiz-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quiz-header h2 {
+    width: 100%;
+  }
+
+  .progress-info {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navigation-controls {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

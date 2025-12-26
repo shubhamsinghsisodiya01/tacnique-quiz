@@ -1,0 +1,8 @@
+{
+  "name": "tacnique-backend",
+  "version": "1.0.0",
+  "description": "Django backend for Tacnique Quiz System",
+  "engines": {
+    "python": "3.11"
+  }
+}
