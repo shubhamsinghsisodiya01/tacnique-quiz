@@ -1,5 +1,7 @@
-# Root requirements file - Railway will detect this
-# Actual dependencies are in backend/requirements.txt
-# This file is here to help Railway detect a Python project
-
--r backend/requirements.txt
+Django>=4.2
+djangorestframework
+psycopg2-binary
+django-cors-headers
+djangorestframework-simplejwt
+gunicorn
+python-decouple
