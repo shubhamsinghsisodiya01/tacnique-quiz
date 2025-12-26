@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import '../styles/QuizTaker.css'
 import SubmitModal from './SubmitModal'
+import { API_BASE_URL } from '../config'
 
 export default function QuizTaker({ quizId, onSubmit, onBack }) {
   const [quiz, setQuiz] = useState(null)
@@ -19,7 +20,7 @@ export default function QuizTaker({ quizId, onSubmit, onBack }) {
   const fetchQuiz = async () => {
     try {
       setLoading(true)
-      const response = await axios.get(`/api/quizzes/${quizId}/public/`)
+      const response = await axios.get(`${API_BASE_URL}/api/quizzes/${quizId}/public/`)
       setQuiz(response.data)
       setCurrentQuestion(0)
       setAnswers({})
@@ -64,7 +65,7 @@ export default function QuizTaker({ quizId, onSubmit, onBack }) {
           text: ''
         }))
       }
-      const response = await axios.post(`/api/quizzes/${quizId}/submit/`, payload)
+      const response = await axios.post(`${API_BASE_URL}/api/quizzes/${quizId}/submit/`, payload)
       onSubmit(response.data)
     } catch (err) {
       alert('Error submitting quiz. Please try again.')

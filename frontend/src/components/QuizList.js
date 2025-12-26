@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import '../styles/QuizList.css'
+import { API_BASE_URL } from '../config'
 
 export default function QuizList({ onStartQuiz }) {
   const [quizzes, setQuizzes] = useState([])
@@ -14,7 +15,7 @@ export default function QuizList({ onStartQuiz }) {
   const fetchQuizzes = async () => {
     try {
       setLoading(true)
-      const response = await axios.get('/api/quizzes/')
+      const response = await axios.get(`${API_BASE_URL}/api/quizzes/`)
       setQuizzes(response.data)
     } catch (err) {
       setError('Failed to load quizzes. Please try again.')
