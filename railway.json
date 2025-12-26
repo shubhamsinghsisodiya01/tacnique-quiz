@@ -1,0 +1,4 @@
+{
+  "buildCommand": "cd backend && pip install -r requirements.txt && python manage.py migrate",
+  "startCommand": "cd backend && gunicorn tacnique_backend.wsgi"
+}
